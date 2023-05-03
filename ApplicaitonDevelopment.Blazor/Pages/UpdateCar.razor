@@ -1,0 +1,69 @@
+﻿@page "/update-car"
+@inject NavigationManager NavigationManager
+
+<div class="w-100 d-flex justify-content-center mt-3">
+    <div class="form-login w-50">
+        <form class="text-center d-flex flex-column gap-4">
+            <h2 class="" style="color: #130666;">Update Car Details</h2>
+
+
+            @*2. brand input*@
+            <div class="form-floating">
+                <input type="text" class="form-control username" placeholder="Brand" />
+                <label for="floatingInput">Brand</label>
+            </div>
+
+            @*3. model input*@
+            <div class="form-floating">
+                <input type="text" class="form-control username" placeholder="Model" />
+                <label for="floatingInput">Model</label>
+            </div>
+
+            @*4. color*@
+            <div class="form-floating">
+                <input type="text" class="form-control username" placeholder="Color" />
+                <label for="floatingInput">Color</label>
+            </div>
+
+            @*5. year input*@
+            <div class="form-floating">
+                <input type="number" class="form-control " placeholder="Year" />
+                <label for="floatingInput">Year</label>
+            </div>
+
+            @*9. rental-fee*@
+            <div class="form-floating">
+                <input type="number" class="form-control " placeholder="Rental Fee" />
+                <label for="floatingInput">Rental Fee</label>
+            </div>
+
+            @*10. discount*@
+            <div class="form-floating">
+                <input type="number" class="form-control" placeholder="Discount" />
+                <label for="floatingInput">Discount</label>
+            </div>
+
+            @*11. type*@
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Type" />
+                @*<label for="floatingInput">Type</label>*@
+            </div>
+
+            @*12. picture*@
+            @*<div class="d-flex justify-content-lg-start gap-3">
+            <label style="font-weight:500; font-size:18px;">Add Picture: </label>
+            <input type="file" accept="image/*" />
+            </div>*@
+
+            @*BUTTON - add car*@
+            <div class="w-100 my-3">
+                <button class="btn btn-lg btn-danger" type="submit" style="background-color: #FF735C; font-weight: 600;">
+                    Update Car
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+@code {
+
+}

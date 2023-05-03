@@ -1,0 +1,58 @@
+﻿@page "/profile"
+
+<div>
+    <h2 class="text-center mb-5 mt-3" style="color: #130666;">Manage Profile</h2>
+</div>
+<div class="d-flex justify-content-around">
+    @*left-container*@
+    <div class="d-flex flex-column gap-5" style="width: 35%; font-weight:500;">
+        @*1. full name*@
+        <div class="d-flex align-items-center justify-content-between" style="font-size: 20px;">
+            <label>Full Name:</label>
+            <input class="w-75" />
+        </div>
+
+        @*2. email*@
+        <div class="d-flex align-items-center justify-content-between" style="font-size: 20px;">
+            <label>Email:</label>
+            <input class="w-75" />
+        </div>
+
+        @*3. phone*@
+        <div class="d-flex align-items-center justify-content-between" style="font-size: 20px;">
+            <label>Phone:</label>
+            <input class="w-75" />
+        </div>
+
+        @*4. address*@
+        <div class="d-flex align-items-center justify-content-between" style="font-size: 20px;">
+            <label>Address</label>
+            <input class="w-75" />
+        </div>
+    </div>
+
+    @*right-container*@
+    <div class="d-flex flex-column gap-5" style="width: 35%; font-weight:500;">
+        @*1. citizenship document*@
+        <div class="d-flex align-items-center justify-content-between">
+            <label style="font-size: 20px;">Citizenship</label>
+            <input type="file" accept="image/png, application/pdf" />
+        </div>
+
+        @*2. driving license*@
+        <div class="d-flex align-items-center justify-content-between">
+            <label style="font-size: 20px;">Driving License</label>
+            <input type="file" accept="image/png, application/pdf" />
+        </div>
+    </div>
+</div>
+
+<div class="w-100 d-flex justify-content-center mt-5">
+    <button class=" btn btn-lg btn-danger" type="submit" style="background-color: #FF735C; font-weight: 600;">
+        Update Profile
+    </button>
+</div>
+
+@code {
+
+}

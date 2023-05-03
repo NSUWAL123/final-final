@@ -1,0 +1,79 @@
+﻿@page "/register"
+@inject NavigationManager NavigationManager
+
+@*logo-section*@
+<div @onclick="@(() => NavigationManager.NavigateTo("/"))" style="cursor: pointer; color: #130666;">
+    <h3>Hajur Ko Car Rental</h3>
+</div>
+
+<div class="login-body w-100 d-flex align-items-center" style="height: 610px; gap: 100px; padding-left: 100px; padding-right: 100px">
+    @*left-container*@
+    <div class="w-50">
+        <img src="https://res.cloudinary.com/djiwumijb/image/upload/v1682260405/assets/6387974_xjeknw.jpg" class="w-100" />
+    </div>
+
+    @*right-container*@
+    <div class="form-login w-50">
+        <form class="text-center d-flex flex-column gap-4">
+            <h1 class="h1 fw-normal" style="color: #130666;"><b>Register</b></h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control username" placeholder="Full Name" />
+                <label for="floatingInput">Full Name</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control username" placeholder="Email" />
+                <label for="floatingInput">Email</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control username" placeholder="Phone" />
+                <label for="floatingInput">Phone</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control " placeholder="Address" />
+                <label for="floatingPassword">Address</label>
+            </div>
+
+            <div class="form-floating d-flex position-relative align-items-center">
+                <input type="@(toggleVisibility ? "password" : "text")" class="form-control password" placeholder="Password" />
+                <label for="floatingPassword">Password</label>
+
+                @if (toggleVisibility)
+                {
+                    <span class="material-symbols-outlined position-absolute" style="right: 20px; cursor:pointer;" @onclick="ToggleVisibility">
+                        visibility
+                    </span>
+                }
+                else
+                {
+                    <span class="material-symbols-outlined position-absolute" style="right: 20px; cursor: pointer;" @onclick="ToggleVisibility">
+                        visibility_off
+                    </span>
+                }
+            </div>
+
+            <div>
+                <button class="w-100 btn btn-lg btn-danger" type="submit" style="background-color: #FF735C; font-weight: 600;">
+                    Register
+                </button>
+                <div class="d-flex gap-2 mt-2">
+                    <p>Already have an account? </p>
+                    <a href="/login" class="text-decoration-none">Login</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@code {
+    private bool toggleVisibility = false;
+
+    private void ToggleVisibility()
+    {
+        toggleVisibility = !toggleVisibility;
+    }
+
+}

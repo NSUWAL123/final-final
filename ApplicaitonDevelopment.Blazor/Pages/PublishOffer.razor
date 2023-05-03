@@ -1,0 +1,56 @@
+﻿@page "/publish-offer"
+
+<div class="w-100 d-flex justify-content-center mt-3">
+    <div class="form-login w-50">
+        <form class="text-center d-flex flex-column gap-4">
+            <h2 class="" style="color: #130666;">Publish Offer</h2>
+
+            @*1. Offer title input*@
+            <div class="form-floating">
+                <input type="text" class="form-control username" placeholder="Offer Name" />
+                <label for="floatingInput">Offer Name</label>
+            </div>
+
+            @*2. Offer description input*@
+            <div class="form-floating">
+                <textarea class="form-control" rows="8" placeholder="Offer Description"></textarea>
+                <label for="floatingInput">Offer Description</label>
+            </div>
+
+            @*1. Offer Start input*@
+            <div class="form-floating">
+                <input type="date" class="form-control username" placeholder="Offer Start" />
+                <label for="floatingInput">Offer Start</label>
+            </div>
+
+            @*1. Offer End input*@
+            <div class="form-floating">
+                <input type="date" class="form-control username" placeholder="Offer End" />
+                <label for="floatingInput">Offer End</label>
+            </div>
+
+            @*1. Offer Car input*@
+            <div class="form-floating d-flex align-items-center gap-3">
+                <div for="floatingInput">Offer Car:</div>
+                <select>
+                    @for (var i = 0; i < 9; i++)
+                    {
+                        <option>Suzuki Swift</option>
+                    }
+                </select>
+            </div>
+
+
+            @*BUTTON - add car*@
+            <div class="w-100 my-3">
+                <button class="btn btn-lg btn-danger" type="submit" style="background-color: #FF735C; font-weight: 600;">
+                    Publish Offer
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@code {
+
+}

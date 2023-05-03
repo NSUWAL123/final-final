@@ -1,0 +1,59 @@
+﻿@page "/manage-car"
+@inject NavigationManager NavigationManager
+
+<div>
+    <h2 class="text-center my-3" style="color: #130666;">Manage Car</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center">Available</th>
+                <th class="text-center">Brand</th>
+                <th class="text-center">Model</th>
+                <th class="text-center">Type</th>
+                <th class="text-center">Year</th>
+                <th class="text-center">Rental Fee</th>
+                <th class="text-center">Discount</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+
+        <tbody style="color: gray;">
+            @* @for (var i = 0; i < 6; i++)
+            {*@
+            <tr>
+                <td class="text-center" style="font-weight:500">Yes</td>
+                <td class="text-center" style="font-weight:500">Suzuki</td>
+                <td class="text-center" style="font-weight:500">Swift</td>
+                <td class="text-center" style="font-weight:500">Suv</td>
+                <td class="text-center" style="font-weight:500">2018</td>
+                <td class="text-center" style="font-weight:500">10000</td>
+                <td class="text-center" style="font-weight:500">10</td>
+                <td class="d-flex justify-content-center gap-3">
+                    <button class="px-2 bg-success text-light rounded-3" style="outline:none; border: none; font-weight: 500;" onclick=@(() => NavigationManager.NavigateTo("/update-car"))>Update</button>
+                    <button class="px-2 bg-danger text-light rounded-3" style="outline:none; border: none; font-weight: 500;">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center" style="font-weight:500">Yes</td>
+                <td class="text-center" style="font-weight:500">Kia</td>
+                <td class="text-center" style="font-weight:500">Rio</td>
+                <td class="text-center" style="font-weight:500">Sedan</td>
+                <td class="text-center" style="font-weight:500">2002</td>
+                <td class="text-center" style="font-weight:500">15000</td>
+                <td class="text-center" style="font-weight:500">12</td>
+                <td class="d-flex justify-content-center gap-3">
+                    <button class="px-2 bg-success text-light rounded-3" style="outline:none; border: none; font-weight: 500;" onclick=@(() => NavigationManager.NavigateTo("/update-car"))>Update</button>
+                    <button class="px-2 bg-danger text-light rounded-3" style="outline:none; border: none; font-weight: 500;">Delete</button>
+                </td>
+            </tr>
+            @*}*@
+        </tbody>
+    </table>
+</div>
+
+
+@code {
+
+}

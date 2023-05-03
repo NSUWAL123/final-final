@@ -1,0 +1,43 @@
+﻿@page "/damage-request-form"
+
+<div class="w-100 d-flex justify-content-center mb-4">
+    <div class="form-login w-50">
+        <form class="text-center d-flex flex-column gap-4">
+            <h2 class="" style="color: #130666;">Damage Request Form</h2>
+
+            <div class="form-floating d-flex align-items-center gap-4">
+                <div class="fw-bold">Car Request Id</div>
+                <div>44f7d5b7-8f96-4bf2-99fd-11efeac00c44</div>
+            </div>
+
+            <div class="form-floating d-flex align-items-center gap-4">
+                <div class="fw-bold">Damage Type</div>
+                <select>
+                    <option>Scratch</option>
+                    <option>Dent</option>
+                    <option>Severe</option>
+                </select>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Reason For Damage" />
+                <label for="floatingInput">Reason For Damage</label>
+            </div>
+
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Additional Description" style="resize:none" />
+                <label for="floatingInput">Additional Description</label>
+            </div>
+
+            <div>
+                <button class="w-100 btn btn-lg btn-danger" type="submit" style="background-color: #FF735C; font-weight: 600;">
+                    Confirm Damage Request
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@code {
+
+}

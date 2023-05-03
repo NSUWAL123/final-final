@@ -1,0 +1,71 @@
+﻿@page "/notification"
+@inject NavigationManager NavigationManager
+
+@using ApplicationDevelopment.Blazor.Data
+@using ApplicationDevelopment.Blazor.Data.DTO
+@using ApplicationDevelopment.Blazor.Data.Services
+@inject OfferService OfferService
+
+
+<div class="mx-lg-5">
+    <button @onclick="@(() => Toggle("vrs"))" style="border: none; background: #679AE8;" class="text-white px-4 py-1">View Request Status</button>
+    <button @onclick="@(() => Toggle("vo"))" style="border: none; background: #679AE8;" class="text-white px-4 py-1">View Offers</button>
+</div>
+
+<div>
+    @if (toggle == "vrs")
+    {
+        <div class=" mx-lg-5 p-4 d-flex gap-5" style="background: white">
+            <div style="width: 200px">
+                <img src="https://res.cloudinary.com/djiwumijb/image/upload/v1682438030/image_2_zaklig.jpg" class="w-100 rounded-3" />
+            </div>
+            <div class="d-flex flex-column gap-3">
+                <div>
+                    <span class="fw-bold">Rental Period: </span> <span>05/03/2023</span> -
+                    <span>05/03/2023</span>
+                </div>
+                <h5>Suzuki Swift</h5>
+                <div>
+                    <span class="fw-bold">Status:</span>
+                    <span>Pending</span>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div>
+            @if (offerDatas != null) {
+                @foreach (var offer in offerDatas)
+                {
+                    <div class=" mx-lg-5 p-4" style="background: white">
+                        <div class="d-flex justify-content-between align-items-center" style="">
+                            <h4>@offer.OfferTitle</h4>
+                            <div>
+                                <span class="fw-bold">Validity: </span><span>@offer.OfferStart.ToString("MM/dd/yyyy")</span> - <span>@offer.OfferEnd.ToString("MM/dd/yyyy")</span>
+                            </div>
+                        </div>
+                        <p>@offer.OfferDescription</p>
+                        <div>car description here -----> </div>
+                    </div>
+                }
+            }
+        </div>
+    }
+
+</div>
+
+@code {
+    private string toggle = "vrs";
+
+    private void Toggle(string mode)
+    {
+        toggle = mode;
+    }
+
+    private List<OfferData>? offerDatas;
+    protected override async Task OnInitializedAsync()
+    {
+        offerDatas = await OfferService.GetOfferAsync();
+    }
+}

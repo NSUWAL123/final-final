@@ -1,0 +1,84 @@
+﻿@page "/manage-damage-request"
+
+<h2 class="text-center my-4 mb-4" style="color: #130666;">Manage Damage Request</h2>
+
+<div class="d-flex flex-column gap-5 rounded-3 mb-4">
+    @for (var i = 0; i < 6; i++)
+    {
+        <div class="d-flex flex-column p-4 gap-4 rounded-3 position-relative" style="background-color: white;">
+            @*customer-detail*@
+            <div>
+                <h5 class="" style="text-decoration: underline;">Customer Details:</h5>
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex gap-2">
+                        <p class="fw-bold">Name: </p>
+                        <p>Nishit Suwal</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <p class="fw-bold">Email: </p>
+                        <p>suwalnishit@gmail.com</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <p class="fw-bold">Phone: </p>
+                        <p>98098905323</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h5 class="" style="text-decoration: underline;">Details:</h5>
+                <div class="d-flex" style="gap: 80px">
+                    <div class="d-flex gap-2">
+                        <p class="fw-bold">Car Id: </p>
+                        <p>6b6f1d6e-4905-4e64-8a59-81cd8aa5107a</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <p class="fw-bold">Damage Type: </p>
+                        <p>Scratch</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p class="fw-bold" style="text-decoration: underline;">Reason For Damage: </p>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesext ever since the 1500s, when an unknown printer took a galley of tye
+                </p>
+            </div>
+
+            <div class="d-flex justify-content-center w-100">
+                <button class="bg-success text-light border-0 px-3 py-1 rounded-3" style="outline: none;" data-toggle="modal" data-target="#myModal" @onclick="ToggleModal">Prepare Bill</button>
+            </div>
+
+
+        </div>
+    }
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 300">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Prepare Bill</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add the form elements for preparing the bill here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool toggleModal = false;
+
+    private void ToggleModal()
+    {
+        toggleModal = !toggleModal;
+    }
+}

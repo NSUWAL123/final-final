@@ -1,0 +1,132 @@
+﻿@page "/damage-request-history"
+
+<div>
+    <div class="d-flex justify-content-center my-3">
+        <h2 class="" style="color: #130666;">Damage Request History</h2>
+    </div>
+
+    <div class="d-flex flex-column gap-4">
+        @*unpaid container*@
+        <div class="rounded-3 p-4" style="background-color: white;">
+            @*customer details container*@
+            <div class="d-flex justify-content-between">
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Name:</p>
+                    <p>Nishit Suwal</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Email:</p>
+                    <p>suwalnishit@gmail.com</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Phone:</p>
+                    <p>9808905331</p>
+                </div>
+            </div>
+
+            @*car details container*@
+            <div>
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Car License:</p>
+                    <p>Ba 24 Pa 2345</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Damage Type:</p>
+                    <p>Scratch</p>
+                </div>
+            </div>
+            <div class="d-flex gap-5">
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Bill Amount:</p>
+                    <p>Rs. 34566</p>
+                </div>
+                @if (false)
+                {
+                    <p class="text-success fw-bold fst-italic">Paid</p>
+                }
+                else
+                {
+                    <p class="text-danger fw-bold fst-italic">Unpaid</p>
+                }
+            </div>
+
+            @*button container*@
+            <div class="d-flex justify-content-center">
+                @if (true)
+                {
+                    <button class="bg-success text-white border-0 rounded-3 px-3 py-1 d-flex gap-1">
+                        <span class="material-symbols-outlined text-white">
+                            done
+                        </span>
+                        <div>Paid</div>
+                    </button>
+                }
+            </div>
+
+        </div>
+
+        @*paid container*@
+        <div class="rounded-3 p-4" style="background-color: white;">
+            @*customer details container*@
+            <div class="d-flex justify-content-between">
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Name:</p>
+                    <p>Nishit Suwal</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Email:</p>
+                    <p>suwalnishit@gmail.com</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Phone:</p>
+                    <p>9808905331</p>
+                </div>
+            </div>
+
+            @*car details container*@
+            <div>
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Car License:</p>
+                    <p>Ba 24 Pa 2345</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Damage Type:</p>
+                    <p>Scratch</p>
+                </div>
+            </div>
+            <div class="d-flex gap-5">
+                <div class="d-flex gap-2">
+                    <p class="fw-bold">Bill Amount:</p>
+                    <p>Rs. 34566</p>
+                </div>
+                @if (true)
+                {
+                    <p class="text-success fw-bold fst-italic">Paid</p>
+                }
+                else
+                {
+                    <p class="text-danger fw-bold fst-italic">Unpaid</p>
+                }
+            </div>
+
+            @*button container*@
+            <div class="d-flex justify-content-center">
+                @if (false)
+                {
+                    <button class="bg-success text-white border-0 rounded-3 px-3 py-1 d-flex gap-1">
+                        <span class="material-symbols-outlined text-white">
+                            done
+                        </span>
+                        <div>Paid</div>
+                    </button>
+                }
+            </div>
+
+        </div>
+        @*unpaid container end*@
+    </div>
+</div>
+
+@code {
+
+}

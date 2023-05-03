@@ -1,0 +1,96 @@
+﻿@page "/dashboard"
+
+<div class="d-flex flex-column gap-3 mx-3">
+    @*top-container*@
+    <div class="d-flex align-items-center">
+        <h3 class="pl-5 w-100 mt-3" style="color:dimgrey">Dashboard</h3>
+        <input type="month" />
+    </div>
+
+    <div class="d-flex justify-content-between">
+        @*rentals fulfilled*@
+        <div class="text-white w-25" style="background: #5D94E7; border-radius: 10px">
+            <div class="p-3 d-flex flex-column gap-2">
+                <div class="" style="display:flex; align-items:center; gap: 10px">
+                    <div class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; background: #ABC9F7; border-radius: 100px">
+                        <span class="material-symbols-outlined" style="font-size: 30px">
+                            directions_car
+                        </span>
+                    </div>
+                    <div class="" style="font-size: 20px; font-weight:500">Rentals Fulfilled</div>
+                </div>
+                @*rental data*@
+                <div style="font-weight: 400; font-size: 18px">4</div>
+                <div style="font-weight: 400; font-size: 18px">for this month</div>
+            </div>
+        </div>
+
+        @*total customers*@
+        <div class="text-white w-25" style="background: #31D490; border-radius: 10px">
+            <div class="p-3 d-flex flex-column gap-2">
+                <div class="" style="display:flex; align-items:center; gap: 10px">
+                    <div class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; background: #53E4A7; border-radius: 100px">
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                    </div>
+                    <div class="" style="font-size: 20px; font-weight:500">Customers</div>
+                </div>
+                @*customer data*@
+                <div style="font-weight: 400; font-size: 18px">2</div>
+                <div style="font-weight: 400; font-size: 18px">customers this month</div>
+            </div>
+        </div>
+
+        @*total revenue*@
+        <div class="text-white w-25" style="background: #FFC655; border-radius: 10px">
+            <div class="p-3 d-flex flex-column gap-2">
+                <div class="" style="display:flex; align-items:center; gap: 10px">
+                    <div class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; background: #FFD684; border-radius: 100px">
+                        <span class="material-symbols-outlined">
+                            payments
+                        </span>
+                    </div>
+                    <div class="" style="font-size: 20px; font-weight:500">Revenue</div>
+                </div>
+                @*revenue data*@
+                <div style="font-weight: 400; font-size: 18px">Rs. 60000</div>
+                <div style="font-weight: 400; font-size: 18px">revenue this month</div>
+            </div>
+        </div>
+    </div>
+
+    @*top 5 customers in the month*@
+    <div class="mt-5">
+        <h5>Top 5 Customers:</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Phone</th>
+                    <th class="text-center">Rented Time</th>
+                </tr>
+            </thead>
+
+            <tbody style="color: gray;">
+                <tr>
+                    <td class="text-center" style="font-weight:500">Nishit Suwal</td>
+                    <td class="text-center" style="font-weight:500">suwalnishit@gmail.com</td>
+                    <td class="text-center" style="font-weight:500">9808905325</td>
+                    <td class="text-center" style="font-weight:500">3</td>
+                </tr>
+                <tr>
+                    <td class="text-center" style="font-weight:500">Tenzing</td>
+                    <td class="text-center" style="font-weight:500">Tenz@gmail.com</td>
+                    <td class="text-center" style="font-weight:500">9851167999</td>
+                    <td class="text-center" style="font-weight:500">1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+
+}

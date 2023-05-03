@@ -1,0 +1,18 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+
+<div class="page d-flex flex-column font-redhat min-vh-100" style="background: #F5F6FA; height: auto;font-family: 'Roboto', sans-serif;
+">
+	<div class="">
+		@if (!NavigationManager.Uri.Contains("/login") && !NavigationManager.Uri.Contains("/register")) { 
+			<NavMenu />
+		}
+	</div>
+
+	<main>
+		<article class="content px-4 mx-2">
+			@Body
+		</article>
+	</main>
+</div>

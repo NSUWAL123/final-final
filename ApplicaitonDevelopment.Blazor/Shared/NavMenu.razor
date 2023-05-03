@@ -1,0 +1,79 @@
+﻿@inject NavigationManager NavigationManager
+
+<div class="d-flex align-items-center justify-content-between px-5 py-3" style="background-color:#E4EFFE; color: #130666">
+    @*logo-section*@
+    <div @onclick="@(() => navigate("/"))" style="cursor: pointer;">
+        <h3>Hajur Ko Car Rental</h3>
+    </div>
+    @*	account, three-dot, login*@
+    <div class="d-flex align-items-center gap-3 position-relative">
+        <div>
+            <div class="d-flex gap-4">
+                <div>
+                    <span class="material-symbols-outlined" style="cursor:pointer;" @onclick="@(() => navigate("/profile"))" data-toggle="tooltip" data-placement="bottom" title="My Profile">
+                        account_circle
+                    </span>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined" style="cursor:pointer;" @onclick="@(() => navigate("/notification"))" data-toggle="tooltip" data-placement="bottom" title="Notifications">
+                        notifications
+                    </span>
+                </div>
+            </div>
+
+            @*when three dots in navbar is clicked*@
+            @if (toggleModal)
+            {
+                <div class="position-absolute px-3 bg-light py-2 shadow-lg rounded-3" style="right: 9px; z-index: 100">
+                    <div class="" style="width: 190px;">
+                        <p @onclick="@(() => navigate("/profile"))" style="cursor:pointer;">My Profile</p>
+                        <p @onclick="@(() => navigate("/car-request"))" style="cursor:pointer;">Car Request</p>
+                        <p @onclick="@(() => navigate("/damage-request-form"))" style="cursor:pointer;">Damage Request Form</p>
+                        <p @onclick="@(() => navigate("/notification"))" style="cursor:pointer;">Notification</p>
+                        <p @onclick="@(() => navigate("/enroll-staff"))" style="cursor:pointer;">Enroll Staff</p>
+                        <p @onclick="@(() => navigate("/manage-user"))" style="cursor:pointer;">Manage User</p> @*Change User Password, *@
+                        <p @onclick="@(() => navigate("/add-car"))" style="cursor:pointer;">Add Car</p>
+                        <p @onclick="@(() => navigate("/manage-car"))" style="cursor:pointer;">Manage Car</p>
+                        <p @onclick="@(() => navigate("/manage-car-request"))" style="cursor:pointer;">Car Requests</p>
+                        <p @onclick="@(() => navigate("/manage-damage-request"))" style="cursor:pointer;">Damage Requests</p>
+                        <p @onclick="@(() => navigate("/damage-request-history"))" style="cursor:pointer;">Damage Request History</p>
+                        <p @onclick="@(() => navigate("/publish-offer"))" style="cursor:pointer;">Publish Offer</p>
+                        <p @onclick="@(() => navigate("/dashboard"))" style="cursor:pointer;">Dashboard</p>
+
+                    </div>
+                </div>
+            }
+        </div>
+        <div>
+            <span class="material-symbols-outlined" style="cursor:pointer;" @onclick="ToggleModal" data-toggle="tooltip" data-placement="bottom" title="Menu">
+                more_vert
+            </span>
+        </div>
+        @if (true)
+        {
+            <button @onclick="@(() => navigate("/"))" class="rounded-2 border-0 px-3 py-1 " style="background-color:#E25247; color: white; font-weight:600">
+                Logout
+            </button>
+        } else {
+            <button @onclick="@(() => navigate("/login"))" class="rounded-2 border-0 px-3 py-1 " style="background-color:#E25247; color: white; font-weight:600">
+                Login
+            </button>
+        }
+    </div>
+</div>
+
+
+@code {
+    private bool toggleModal = false;
+
+    private void ToggleModal()
+    {
+        toggleModal = !toggleModal;
+    }
+
+    private void navigate(string endpoint)
+    {
+        NavigationManager.NavigateTo(endpoint);
+        toggleModal = false;
+    }
+}

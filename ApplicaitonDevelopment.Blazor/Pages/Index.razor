@@ -1,0 +1,105 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+@using ApplicationDevelopment.Blazor.Data
+@using ApplicationDevelopment.Blazor.Data.DTO
+@using ApplicationDevelopment.Blazor.Data.Services
+@inject CarService CarService
+
+<div class="my-3 d-flex flex-wrap justify-content-center" style="gap:60px">
+    @if (carDatas != null)
+    {
+        @foreach (var car in carDatas)
+        {
+            @*CAR CARD CONTAINER*@
+            <div class="p-2 rounded-3 shadow-lg d-flex flex-column align-items-center position-relative" style="width: 250px; background-color: #F9FAFE">
+                @*PRICE CONTAINER*@
+                <p style="background-color:#E4EFFE; border-radius: 20px; font-weight:600; color: #130666" class="px-3 py-1">
+                    @if (car.Discount > 0)
+                    {
+                        <span>Rs. <strike>@car.RetailFee</strike></span>
+                    }
+                    <span class="fw-bold" style="font-size: 18px"> Rs. @CalculateOfferedPrice(@car.RetailFee, @car.Discount)</span> day
+                </p>
+                <div class="position-relative d-flex align-items-center justify-content-center">
+                    <img src="@car.CarImage" class="w-100 pb-2" />
+                    @if (!car.IsAvailable)
+                    {
+                        <div class="position-absolute  bg-black bg-opacity-75 text-white w-100 text-center py-1">Not Available</div>
+                    }
+                </div>
+
+                @*car name*@
+                <p class="fw-bold">@car.Brand @car.Model</p>
+
+                @*INNER LEFT CONTAINER*@
+                <div class="w-100 d-flex justify-content-between px-2">
+                    @*mileage*@
+                    <div class="d-flex flex-column">
+                        <div class="d-flex gap-2">
+                            <span class="material-symbols-outlined" style="color: #130666;">
+                                humidity_low
+                            </span>
+                            <p>8 km</p>
+                        </div>
+                        @*petrol or diseal*@
+                        <div class="d-flex gap-2">
+                            <span class="material-symbols-outlined" style="color: #130666;">
+                                local_gas_station
+                            </span>
+                            <p>Petrol</p>
+                        </div>
+                    </div>
+
+                    @*INNER RIGHT CONTAINER*@
+                    <div class="d-flex flex-column ">
+                        @*making year*@
+                        <div class="d-flex gap-2">
+                            <span class="material-symbols-outlined" style="color: #130666;">
+                                precision_manufacturing
+                            </span>
+                            <p>@car.Year</p>
+                        </div>
+                        @*max passenger*@
+                        <div class="d-flex gap-2">
+                            <span class="material-symbols-outlined" style="color: #130666;">
+                                group
+                            </span>
+                            <p>5</p>
+                        </div>
+                    </div>
+                </div>
+
+                @*RENT BUTTON CONTAINER*@
+                <button class="border-0 text-light rounded-3 py-2 w-100" style="background-color: #EE993D; font-weight:500" @onclick="@(() => NavigationManager.NavigateTo($"/cars/{car.Id}"))">
+                    Rent this car
+                </button>
+
+                @*DICOUNT CONTAINER*@
+                @if (car.Discount > 0)
+                {
+                    <div class="position-absolute" style="right:-22px; top:-15px; width: 45px; height: 45px; border-radius: 100px; background-color: #00CF21">
+                        <p class="text-center fw-bolder text-white" style="margin-top: 10px">@car.Discount%</p>
+                    </div>
+                }
+
+            </div>
+        }
+
+    }
+
+</div>
+
+@code {
+    private IEnumerable<CarData>? carDatas;
+    protected override async Task OnInitializedAsync()
+    {
+        carDatas = await CarService.GetCarsAsync();
+    }
+
+    private int CalculateOfferedPrice(int retailPrice, double discount)
+    {
+        var calculate = retailPrice - (int)(retailPrice * (discount / 100.0));
+        return calculate;
+    }
+}

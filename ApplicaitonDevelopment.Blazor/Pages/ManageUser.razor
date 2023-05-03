@@ -1,0 +1,44 @@
+﻿@page "/manage-user"
+@inject NavigationManager NavigationManager
+
+<div>
+    <h2 class="text-center my-3" style="color: #130666;">Manage User</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center">Name</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Phone</th>
+                <th class="text-center">Address</th>
+                <th class="text-center"></th>
+            </tr>
+        </thead>
+
+        <tbody style="color: gray;">
+
+                <tr>
+                    <td class="text-center" style="font-weight:500">Nishit Suwal</td>
+                    <td class="text-center" style="font-weight:500">suwalnishit@gmail.com</td>
+                    <td class="text-center" style="font-weight:500">9808905325</td>
+                    <td class="text-center" style="font-weight:500">Kupondole</td>
+                    <td class="d-flex justify-content-center gap-3">
+                        <button @onclick="@(() => NavigationManager.NavigateTo("/change-password"))" class="text-light rounded-3" style="outline:none; border: none; font-weight: 500; background-color: #EE993D">Change Password</button>
+                    </td>
+                </tr>
+            <tr>
+                <td class="text-center" style="font-weight:500">Tenzing</td>
+                <td class="text-center" style="font-weight:500">Tenz@gmail.com</td>
+                <td class="text-center" style="font-weight:500">9851167999</td>
+                <td class="text-center" style="font-weight:500">Bouddha</td>
+                <td class="d-flex justify-content-center gap-3">
+                    <button class="text-light rounded-3" style="outline:none; border: none; font-weight: 500; background-color: #EE993D">Change Password</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@code {
+
+}
